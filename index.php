@@ -1,8 +1,5 @@
 <?php
 
-ini_set("log_errors", 1);
-ini_set("error_log", "/tmp/php-error.log");
-
 $files = glob("*.{jpg,JPG,png,PNG}", GLOB_BRACE);
 
 $handle = fopen("page.html", "r") or die("Unable to open file!");
@@ -52,7 +49,6 @@ if ($found == false)
     die ("Did not find javascript line to edit");
 }
 
-error_log($output_html);
 echo $output_html;
 
 ?>
