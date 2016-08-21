@@ -11,7 +11,7 @@ Extremely simple gallery webpage for a folder of images
 
 ## Motivation
 
-I googled around for a gallery tool that was short enough to read through in a few minutes without any external dependencies (excluding jquery). Most of them were overly engineering massive web apps with bells and whistles. Frustrated, I figured the only way is to spend a couple of hours coding my own.
+I googled around for a gallery tool that was short enough to read through in a few minutes without any external dependencies (excluding jquery). Most of them were overly engineered massive web apps with bells and whistles. Frustrated, I figured the only way is to spend a couple of hours coding my own.
 
 This gallery works as follows:
 
@@ -19,7 +19,8 @@ This gallery works as follows:
 * The PHP file finds all image files in the same directory as the PHP file
 * The PHP file loads page.html and adds the array of found images in the javascript code by smacking it right in
 * The modified page.html is served by PHP echo
-* Javascript changes the image on page load and previous / next button presses
+* Javascript changes the image source on the img tag on page load
+* Previous and Next buttons do the same
 
 ## License
 
