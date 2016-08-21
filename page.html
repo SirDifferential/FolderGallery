@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+        <title>Index Gallery</title>
+        <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+        <script type="text/javascript">
+
+            var current_image = 0;
+            var total_images = 0;
+            var image_array = [];
+
+            $(document).ready(function() {
+
+                // In php, insert images after this line in a variable called imagearr
+
+                imagearr.forEach(function(entry) {
+                    image_array.push(entry);
+                });
+
+                total_images = imagearr.length;
+                $("#image_source").attr("src", image_array[current_image]);
+                $("#image_name").html((current_image+1) + " / " + total_images + " " + image_array[current_image]);
+            });
+
+            $(document).on('click', '#image_prev', function() {
+                current_image = current_image - 1;
+                if (current_image < 0)
+                {
+                    current_image = total_images - 1;
+                }
+
+                $("#image_source").attr("src", image_array[current_image]);
+                $("#image_name").html((current_image+1) + " / " + total_images + " " + image_array[current_image]);
+            });
+
+            $(document).on('click', '#image_next', function() {
+                current_image = current_image + 1;
+                if (current_image >= total_images)
+                {
+                    current_image = 0;
+                }
+
+                $("#image_source").attr("src", image_array[current_image]);
+                $("#image_name").html((current_image+1) + " / " + total_images + " " + image_array[current_image]);
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id="image_browser">
+            <button id="image_prev">Previous</button>
+            <button id="image_next">Next</button>
+        </div>
+
+        <div id="image_container">
+            <div id="image_name"></div>
+            <img id="image_source" src=""></img>
+        </div>
+    </body>
+
+</html>
+
