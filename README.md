@@ -1,6 +1,10 @@
 # FolderGallery
 Extremely simple gallery webpage for a folder of images
 
+## Demo
+
+http://plantmonster.net/pictures/packed/mokki2016/gallery/index.php
+
 ## Installation
 
 * For your web server of choice, make sure PHP works properly
